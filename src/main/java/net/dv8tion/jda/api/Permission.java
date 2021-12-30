@@ -31,6 +31,7 @@ public enum Permission
     CREATE_INSTANT_INVITE(0, true, true, "Create Instant Invite"),
     KICK_MEMBERS(         1, true, false, "Kick Members"),
     BAN_MEMBERS(          2, true, false, "Ban Members"),
+    MODERATE_MEMBERS(    40, true, false, "Timeout Members"),
     ADMINISTRATOR(        3, true, false, "Administrator"),
     MANAGE_CHANNEL(       4, true, true, "Manage Channels"),
     MANAGE_SERVER(        5, true, false, "Manage Server"),
