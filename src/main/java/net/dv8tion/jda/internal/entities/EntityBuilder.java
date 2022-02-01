@@ -1966,7 +1966,7 @@ public class EntityBuilder
     {
         final long targetId = entryJson.getLong("target_id", 0);
         final long id = entryJson.getLong("id");
-        final int typeKey = entryJson.getInt("action_type");
+        final int typeKey = entryJson.isNull("action_type") ? -1 : entryJson.getInt("action_type");
         final DataArray changes = entryJson.isNull("changes") ? null : entryJson.getArray("changes");
         final DataObject options = entryJson.isNull("options") ? null : entryJson.getObject("options");
         final String reason = entryJson.getString("reason", null);
