@@ -138,6 +138,11 @@ public enum MessageType
      * The "Invite your friends" messages that are sent to guild owners in new servers.
      */
     GUILD_INVITE_REMINDER(22),
+    
+    /**
+     * Automod messages
+     */
+    AUTOMOD(24, false),
 
     /**
      * Unknown MessageType.

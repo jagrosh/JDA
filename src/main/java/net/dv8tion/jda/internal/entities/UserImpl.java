@@ -41,7 +41,7 @@ public class UserImpl extends UserById implements User
     protected short discriminator;
     protected String name;
     protected String avatarId;
-    protected Profile profile;
+    //protected Profile profile;
     protected long privateChannel = 0L;
     protected boolean bot;
     protected boolean system;
@@ -93,7 +93,7 @@ public class UserImpl extends UserById implements User
 
     public Profile getProfile()
     {
-        return profile;
+        return null;
     }
 
     @Nonnull
@@ -207,7 +207,7 @@ public class UserImpl extends UserById implements User
 
     public UserImpl setProfile(Profile profile)
     {
-        this.profile = profile;
+        //this.profile = profile;
         return this;
     }
 

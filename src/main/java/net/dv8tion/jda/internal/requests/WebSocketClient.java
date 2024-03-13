@@ -261,7 +261,8 @@ public class WebSocketClient extends WebSocketAdapter implements WebSocketListen
         }
 
         //Allows 115 messages to be sent before limiting.
-        if (this.messagesSent.get() <= 115 || (skipQueue && this.messagesSent.get() <= 119))   //technically we could go to 120, but we aren't going to chance it
+        //if (this.messagesSent.get() <= 115 || (skipQueue && this.messagesSent.get() <= 119))   //technically we could go to 120, but we aren't going to chance it
+        if (this.messagesSent.get() <= 80 || (skipQueue && this.messagesSent.get() <= 85))   //technically we could go to 120, but we aren't going to chance it
         {
             LOG.trace("<- {}", message);
             if (encoding == GatewayEncoding.ETF)

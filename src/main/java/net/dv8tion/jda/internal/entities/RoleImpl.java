@@ -51,7 +51,7 @@ public class RoleImpl implements Role
 
     private RoleManager manager;
 
-    private RoleTagsImpl tags;
+    //private RoleTagsImpl tags;
     private String name;
     private boolean managed;
     private boolean hoisted;
@@ -59,14 +59,14 @@ public class RoleImpl implements Role
     private long rawPermissions;
     private int color;
     private int rawPosition;
-    private RoleIcon icon;
+    //private RoleIcon icon;
 
     public RoleImpl(long id, Guild guild)
     {
         this.id = id;
         this.api =(JDAImpl) guild.getJDA();
         this.guild = guild;
-        this.tags = api.isCacheFlagSet(CacheFlag.ROLE_TAGS) ? new RoleTagsImpl() : null;
+        //this.tags = api.isCacheFlagSet(CacheFlag.ROLE_TAGS) ? new RoleTagsImpl() : null;
     }
 
     @Override
@@ -287,8 +287,8 @@ public class RoleImpl implements Role
                     .setHoisted(hoisted)
                     .setMentionable(mentionable)
                     .setName(name)
-                    .setPermissions(rawPermissions)
-                    .setIcon(icon == null ? null : icon.getEmoji()); // we can only copy the emoji as we don't have access to the Icon instance
+                    .setPermissions(rawPermissions);
+                    //.setIcon(null); // we can only copy the emoji as we don't have access to the Icon instance
     }
 
     @Nonnull
@@ -327,14 +327,14 @@ public class RoleImpl implements Role
     @Override
     public RoleTags getTags()
     {
-        return tags == null ? RoleTagsImpl.EMPTY : tags;
+        return RoleTagsImpl.EMPTY;
     }
 
     @Nullable
     @Override
     public RoleIcon getIcon()
     {
-        return icon;
+        return null;
     }
 
     @Nonnull
@@ -445,15 +445,15 @@ public class RoleImpl implements Role
 
     public RoleImpl setTags(DataObject tags)
     {
-        if (this.tags == null)
-            return this;
-        this.tags = new RoleTagsImpl(tags);
+        //if (this.tags == null)
+        //    return this;
+        //this.tags = new RoleTagsImpl(tags);
         return this;
     }
 
     public RoleImpl setIcon(RoleIcon icon)
     {
-        this.icon = icon;
+        //this.icon = icon;
         return this;
     }
 

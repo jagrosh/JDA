@@ -124,6 +124,7 @@ public class Route
     {
         public static final Route GET_GUILD =          new Route(GET,    "guilds/{guild_id}");
         public static final Route MODIFY_GUILD =       new Route(PATCH,  "guilds/{guild_id}");
+        public static final Route SECURITY_ACTIONS =   new Route(PUT,    "guilds/{guild_id}/incident-actions");
         public static final Route GET_VANITY_URL =     new Route(GET,    "guilds/{guild_id}/vanity-url");
         public static final Route CREATE_CHANNEL =     new Route(POST,   "guilds/{guild_id}/channels");
         public static final Route GET_CHANNELS =       new Route(GET,    "guilds/{guild_id}/channels");

@@ -46,7 +46,7 @@ public class MemberImpl implements Member
     private User user;
     private String nickname;
     private String avatarId;
-    private long joinDate, boostDate, timeOutEnd;
+    private long joinDate, timeOutEnd;
     private boolean pending = false;
 
     public MemberImpl(GuildImpl guild, User user)
@@ -112,7 +112,7 @@ public class MemberImpl implements Member
     @Override
     public OffsetDateTime getTimeBoosted()
     {
-        return boostDate != 0 ? Helpers.toOffset(boostDate) : null;
+        return null;
     }
 
     @Nullable
@@ -377,7 +377,7 @@ public class MemberImpl implements Member
 
     public MemberImpl setBoostDate(long boostDate)
     {
-        this.boostDate = boostDate;
+        //this.boostDate = boostDate;
         return this;
     }
 
@@ -400,7 +400,7 @@ public class MemberImpl implements Member
 
     public long getBoostDateRaw()
     {
-        return boostDate;
+        return 0;
     }
 
     public long getTimeOutEndRaw()
